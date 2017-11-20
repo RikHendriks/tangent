@@ -435,6 +435,10 @@ def numpy_arctan(a):
   return np.arctan(a)
 
 
+def numpy_arctan2(a, b):
+  return np.arctan2(a, b)
+
+
 # Label is 0 or 1
 
 

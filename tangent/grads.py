@@ -252,6 +252,13 @@ def arctan(y, x):
   d[x] = d[y] / (1.0 + x * x)
 
 
+@adjoint(numpy.arctan2)
+def arctan2(z, x, y):
+  xy = x * x + y * y
+  d[x] = d[z] * y / xy
+  d[y] = d[z] * -x / xy
+
+
 @adjoint(numpy.exp)
 def exp(y, x):
   d[x] = y * d[y]

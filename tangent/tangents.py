@@ -183,6 +183,12 @@ def tarctan(z, x):
   d[z] = d[x] / (1.0 + x * x)
 
 
+@tangent_(numpy.arctan2)
+def tarctan2(z, x, y):
+  xy = x * x + y * y
+  d[z] = (d[x] * y + d[y] * -x) / xy
+
+
 @tangent_(numpy.exp)
 def texp(z, x):
   d[z] = d[x] * z
